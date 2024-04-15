@@ -1,0 +1,139 @@
+#game-previews {
+    padding-top: 100px;
+    padding-bottom: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 500px);
+    grid-auto-rows: 300px;
+    gap: 50px;
+}
+
+.selector-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition-duration: .5s;
+}
+
+.selector {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-width: 0;
+    background: radial-gradient(#531c0d, #36100b);
+    border-radius: 20px;
+    transition-duration: .3s;
+    box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.58);
+}
+
+.selector.active {
+    z-index: 10;
+    scale: var(--modal-scale-x) var(--modal-scale-y);
+    translate: var(--modal-translate-x) var(--modal-translate-y);
+}
+
+.selector:not(.active):hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.selector img {
+    position: absolute;
+    height: 80%;
+    left: 50%;
+    top: 55%;
+    translate: -50% -45%;
+    transition-duration: .3s;
+}
+
+.selector.active img{
+    scale: calc(1.5 / var(--modal-scale-x)) calc(1.5 / var(--modal-scale-y));
+    translate: -80% -50%;
+}
+
+.selector .title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: left;
+    height: 50px;
+    transition-duration: .3s;
+    transform-origin: 0 0;
+}
+
+.selector.active .title {
+    scale: calc(1 / var(--modal-scale-x)) calc(1 / var(--modal-scale-y));
+}
+
+.selector .number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 100%;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    background: black;
+}
+
+.selector .title .text {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 40px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.37);
+}
+
+.selector .description-wrapper-overflow {
+    overflow: hidden;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+}
+
+.selector .description-wrapper-translate {
+    translate: 100% 0;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    transition-duration: .3s;
+}
+
+.selector.active .description-wrapper-translate {
+    translate: 0 0;
+}
+
+.selector .description-wrapper-overflow p {
+    padding-right: 20px;
+    color: white;
+}
+
+.selector .description-wrapper-overflow .divider {
+    height: 90%;
+    width: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 7.5px;
+    background-color: white;
+    margin-right: 10px;
+}

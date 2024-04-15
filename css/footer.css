@@ -1,0 +1,34 @@
+footer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-top: -100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+footer::after {
+    z-index: -1;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#7b3915, #692d0f);
+    mask-image: url("../img/mask-sawtooth.svg");
+    rotate: 180deg;
+}
+
+footer::before {
+    z-index: -2;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2.5em;
+    top: 20px;
+    box-shadow: 1px 1px 30px 1px black;
+}

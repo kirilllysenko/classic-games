@@ -1,0 +1,35 @@
+header {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: white;
+}
+
+header::after {
+    z-index: -1;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#7b3915, #692d0f);
+    mask-image: url("../img/mask-sawtooth.svg");
+}
+
+header::before {
+    z-index: -2;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2.5em;
+    bottom: 20px;
+    box-shadow: 1px 1px 30px 1px black;
+}
